@@ -2,13 +2,13 @@ import { access, mkdir, copyFile, readdir } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = dirname(_filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const copy = async () => {
     // Write your code here
-    const files = _dirname + '/files';
-    const filesCopy = _dirname + '/files_copy';
+    const files = __dirname + '/files';
+    const filesCopy = __dirname + '/files_copy';
     const existText = 'FS operation failed';
 
     try {
@@ -22,7 +22,7 @@ const copy = async () => {
 
         const dirFiles = await readdir(files);
         await mkdir(filesCopy);
-        await Promises.all(dirfiles.map(item => copyFile(`${files}/${item}`, `${filesCopy}/${item}`)));
+        await Promises.all(dirFiles.map(item => copyFile(`${files}/${item}`, `${filesCopy}/${item}`)));
       } catch (e) {
         throw new Error(e);
       }

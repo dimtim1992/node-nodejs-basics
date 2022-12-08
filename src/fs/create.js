@@ -2,12 +2,12 @@ import { writeFile, access } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = dirname(_filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const create = async () => {
     // Write your code here
-    const src = _dirname + '/files/fresh.txt';
+    const src = __dirname + '/files/fresh.txt';
     const existText = 'FS operation failed';
     const fileText = "I am fresh and young";
 

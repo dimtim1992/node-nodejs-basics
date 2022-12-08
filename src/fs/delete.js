@@ -2,12 +2,12 @@ import { unlink } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = dirname(_filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const remove = async () => {
     // Write your code here
-    const src = _dirname + '/files/fileToRemove.txt';
+    const src = __dirname + '/files/fileToRemove.txt';
     const existText = 'FS operation failed';
 
     try {

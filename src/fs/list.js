@@ -2,12 +2,12 @@ import { readdir } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = dirname(_filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const list = async () => {
     // Write your code here
-    const src = _dirname + '/files';
+    const src = __dirname + '/files';
     const existText = 'FS operation failed';
 
     try {
